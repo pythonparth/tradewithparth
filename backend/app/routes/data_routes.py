@@ -34,9 +34,6 @@ def get_data(
     df = df.reset_index()
     df["Date"] = df["Date"].astype(str)  # Ensure ISO string for frontend
 
-    trades_df = df[df["BUY_SIGNAL"] | df["EXIT_SIGNAL"] ]
-    print(trades_df[["Date", "Close", "BUY_SIGNAL", "SELL_SIGNAL", "EXIT_SIGNAL", "EXIT_REASON"]])
-
     return JSONResponse(content=json.loads(df.to_json(orient="records")))
 
     
