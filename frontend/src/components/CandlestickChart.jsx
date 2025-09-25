@@ -58,7 +58,7 @@ export default function CandlestickChart({ candlestickData, sma20Data, sma50Data
       const sma50Series = chartRef.current.addLineSeries({ color: '#FF6D00', lineWidth: 2, title: 'SMA 50' });
       sma50Series.setData(sma50Data);
     }
-
+    
     chartRef.current.timeScale().fitContent();
 
     // Responsive resize
